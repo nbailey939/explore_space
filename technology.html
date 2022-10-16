@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="tech-styles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <title>Technology | Space tourism</title>
+  </head>
+  <body class="technology">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <header class="primary-header flex">
+      <div>
+        <img
+          src="./assets/shared/logo.svg"
+          alt="space tourism logo"
+          class="logo"
+        />
+      </div>
+      <button class="mobile-nav-toggle" aria-controls="primary-technology">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation underline-indicators flex"
+        >
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="index.html"
+              ><span aria-hidden="true">00</span>Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="destination.html"
+              ><span aria-hidden="true">01</span>Destination</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="crew.html"
+              ><span aria-hidden="true">02</span>Crew</a
+            >
+          </li>
+          <li class="active">
+            <a
+              class="ff-sans-cond uppercase text-white letter-spacing-2"
+              href="technology.html"
+              ><span aria-hidden="true">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-----------Main Content Below------------->
+    <main id="main" class="grid-container grid-container--technology flow">
+      <h1 class="numbered-title">
+        <span aria-hidden="true">03</span> Space launch 101
+      </h1>
+
+      <div class="btn-group" role="tablist" aria-label="option list">
+        <button
+          id="vehicle"
+          aria-selected="true"
+          aria-controls="vehicle-tab"
+          role="tab"
+          data-image="vehicle-image"
+          tabindex="0"
+        >
+          <span>1</span>
+        </button>
+        <button
+          id="spaceport"
+          aria-selected="false"
+          aria-controls="spaceport-tab"
+          role="tab"
+          data-image="spaceport-image"
+          tabindex="-1"
+        >
+          <span>2</span>
+        </button>
+        <button
+          id="capsule"
+          aria-selected="false"
+          aria-controls="capsule-tab"
+          role="tab"
+          data-image="capsule-image"
+          tabindex="-1"
+        >
+          <span>3</span>
+        </button>
+      </div>
+
+      <!-- Launch Vehicle -->
+      <article
+        class="technology-details flow"
+        id="vehicle-tab"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="fs-600 ff-serif uppercase" id="head">
+            The terminology...
+          </h2>
+          <p class="fs-700 uppercase ff-serif" id="type"></p>
+        </header>
+        <p id="text"></p>
+      </article>
+
+      <picture id="imagesrc">
+        <source
+          id="imagesrcset"
+          media="(max-width: 980px)"
+          srcset=""
+          type="image/jpg"
+        />
+        <img
+          id="image"
+          src=""
+          alt="Launch
+        Vehicle"
+        />
+      </picture>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

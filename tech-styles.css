@@ -1,6 +1,7 @@
-/* ------------------- */
-/* Custom properties   */
-/* ------------------- */
+/*-------------------------*/
+/*---Custom properties-----*/
+/*--Technology Page Only---*/
+/*-------------------------*/
 
 :root {
   /* colors */
@@ -45,9 +46,9 @@
   }
 }
 
-/*-------------------*/
-/*------Reset--------*/
-/*-------------------*/
+/*--------------------*/
+/*------Reset---------*/
+/*--------------------*/
 
 /* https://piccalil.li/blog/a-modern-css-reset/ */
 
@@ -98,7 +99,7 @@ body {
 
 /* make images easier to work with */
 img,
-picutre {
+picture {
   max-width: 100%;
   display: block;
 }
@@ -123,12 +124,12 @@ select {
   }
 }
 
-/*---------------------*/
-/*---Utility classes---*/
-/*---------------------*/
-/*---------*/
-/*-general-*/
-/*---------*/
+/*-----------------------*/
+/*----Utility classes----*/
+/*-----------------------*/
+
+/* general */
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -183,9 +184,9 @@ select {
 .skip-to-content:focus {
   transform: translateY(0);
 }
-/*--------*/
-/*-colors-*/
-/*--------*/
+
+/* colors */
+
 .bg-dark {
   background-color: hsl(var(--clr-dark));
 }
@@ -205,9 +206,9 @@ select {
 .text-white {
   color: hsl(var(--clr-white));
 }
-/*------------*/
-/*-typography-*/
-/*------------*/
+
+/* typography */
+
 .ff-serif {
   font-family: var(--ff-serif);
 }
@@ -277,10 +278,6 @@ select {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-/*-------------------*/
-/*----Compontents----*/
-/*------------------*/
-
 .large-button {
   font-size: 2rem;
   position: relative;
@@ -310,9 +307,7 @@ select {
   opacity: 1;
   transform: scale(1.5);
 }
-/*----------------*/
-/* primary-header */
-/*----------------*/
+
 .logo {
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }
@@ -350,7 +345,6 @@ select {
     backdrop-filter: blur(1.2rem);
   }
 }
-
 @media (max-width: 35rem) {
   .primary-navigation {
     --underline-gap: 0.5rem;
@@ -395,6 +389,9 @@ select {
   .mobile-nav-toggle:focus-visible {
     outline: 5px solid white;
     outline-offset: 5px;
+  }
+  .btn-group {
+    display: flex;
   }
 }
 
@@ -472,14 +469,14 @@ select {
 }
 .btn-group button {
   background-color: hsl(var(--clr-dark));
-  border: 0;
+  border: 1px solid hsl(var(--clr-white) / 0.4);
   color: hsl(var(--clr-white));
   padding: 10px 24px;
   cursor: pointer;
   aspect-ratio: 1;
   display: block;
   border-radius: 50%;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 .btn-group button:hover,
 .btn-group button:focus {
@@ -491,74 +488,14 @@ select {
   color: hsl(var(--clr-dark));
 }
 .btn-group {
-  margin-left: clamp(5vw, 5rem);
+  margin-left: clamp(2rem, 8vw, 6rem);
+  margin-right: clamp(2rem, 8vw, 5rem);
 }
-/*------------------------------*/
-/*--Page specific background----*/
-/*------------------------------*/
+
 body {
   background-size: cover;
   background-position: bottom center;
 }
-/* home */
-.home {
-  background-image: url(./assets/home/background-home-mobile.jpg);
-}
-
-@media (min-width: 35rem) {
-  .home {
-    background-position: center center;
-    background-image: url(./assets/home/background-home-tablet.jpg);
-  }
-}
-
-@media (min-width: 45rem) {
-  .home {
-    background-image: url(./assets/home/background-home-desktop.jpg);
-  }
-}
-/*-------------*/
-/* destination */
-/*-------------*/
-.destination {
-  background-image: url(./assets/destination/background-destination-mobile.jpg);
-}
-
-@media (min-width: 35rem) {
-  .destination {
-    background-position: center center;
-    background-image: url(./assets/destination/background-destination-tablet.jpg);
-  }
-}
-
-@media (min-width: 45rem) {
-  .destination {
-    background-image: url(./assets/destination/background-destination-desktop.jpg);
-  }
-}
-/*-----------------*/
-/*----- crew ------*/
-/*-----------------*/
-.crew {
-  background-image: url(./assets/crew/background-crew-mobile.jpg);
-}
-
-@media (min-width: 35rem) {
-  .crew {
-    background-position: center center;
-    background-image: url(./assets/crew/background-crew-tablet.jpg);
-  }
-}
-
-@media (min-width: 45rem) {
-  .crew {
-    background-image: url(./assets/crew/background-crew-desktop.jpg);
-  }
-}
-
-/* ----------------------------- */
-/* ---------Layout-------------- */
-/* ----------------------------- */
 
 .grid-container {
   text-align: center;
@@ -574,93 +511,40 @@ body {
 
 .numbered-title {
   grid-area: title;
+  align-items: center;
 }
-/*----------------------*/
-/*--destination layout--*/
-/*----------------------*/
 
-.grid-container--destination {
+.grid-container--technology > picture {
+  grid-area: image;
+  max-width: 100%;
+  align-self: right;
+}
+/*-----------------------*/
+/*-- Technology Layout --*/
+/*-----------------------*/
+.technology {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .technology {
+    background-position: center center;
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .technology {
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+  }
+}
+.grid-container--technology {
   --flow-space: 2rem;
   grid-template-areas:
-    'title'
     'image'
+    'title'
     'tabs'
     'content';
-}
-
-.grid-container--destination > picture {
-  grid-area: image;
-  max-width: 60%;
-  align-self: start;
-}
-
-.grid-container--destination > .tab-list {
-  grid-area: tabs;
-}
-
-.grid-container--destination > .destination-info {
-  grid-area: content;
-}
-
-.destination-meta {
-  flex-direction: column;
-  border-top: 1px solid hsl(var(--clr-white) / 0.1);
-  padding-top: 2.5rem;
-  margin-top: 2.5rem;
-}
-
-.destination-meta p {
-  font-size: 1.75rem;
-}
-/*-------------*/
-/* crew layout */
-/*-------------*/
-.grid-container--crew {
-  --flow-space: 2rem;
-  grid-template-areas:
-    'title'
-    'image'
-    'tabs'
-    'content';
-}
-
-.grid-container--crew > picture {
-  grid-area: image;
-  max-width: 60%;
-  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
-}
-
-.grid-container--crew > .dot-indicators {
-  grid-area: tabs;
-}
-
-.grid-container--crew > .crew-details {
-  grid-area: content;
-}
-
-.crew-details h2 {
-  color: hsl(var(--clr-white) / 0.5);
-}
-
-@media (min-width: 35em) {
-  .numbered-title {
-    justify-self: start;
-    margin-top: 2rem;
-  }
-
-  .destination-meta {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-
-  .grid-container--crew {
-    padding-bottom: 0;
-    grid-template-areas:
-      'title'
-      'content'
-      'tabs'
-      'image';
-  }
 }
 
 @media (min-width: 45em) {
@@ -672,53 +556,52 @@ body {
         1fr
       );
   }
-
-  .grid-container--home {
-    padding-bottom: max(6rem, 20vh);
-    align-items: end;
+  .numbered-title {
+    justify-self: start;
+    margin-top: 2rem;
   }
-
-  .grid-container--home > *:first-child {
-    grid-column: 2;
-  }
-
-  .grid-container--home > *:last-child {
-    grid-column: 3;
-  }
-
-  .grid-container--destination {
-    justify-items: start;
-    align-content: start;
+  .grid-container--technology {
+    grid-template-columns: minmax(10rem) minmax(12rem, 33rem);
+    justify-items: end;
     grid-template-areas:
-      '. title title .'
-      '. image tabs .'
-      '. image content .';
+      'btn title . image'
+      'btn content . image';
+  }
+  .btn-group {
+    margin-inline: auto;
+    grid-area: btn;
+  }
+  .tech-pic {
+    grid-area: image;
+  }
+  .technology-details {
+    grid-area: content;
   }
 
-  .grid-container--destination > picture {
+  .grid-container--technology > picture {
+    grid-column: span 2;
+    justify-self: right;
+    align-items: center;
     max-width: 90%;
   }
-
-  .destination-meta {
-    --gap: min(6vw, 6rem);
-    justify-content: start;
+}
+@media (max-width: 45em) {
+  .btn-group {
+    display: flex;
   }
-
-  .grid-container--crew {
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(
-        1rem,
-        1fr
-      );
-    justify-items: start;
+  .btn-group button {
+    margin-inline: 10px;
+  }
+  .grid-container--technology {
+    padding-bottom: 0;
     grid-template-areas:
-      '. title title .'
-      '. content image .'
-      '. tabs image .';
+      'image'
+      'tabs'
+      'title'
+      'content';
   }
-
-  .grid-container--crew > picture {
-    grid-column: span 2;
-    align-self: end;
-    max-width: 85%;
+  .numbered-title {
+    grid-area: title;
+    align-items: center;
   }
 }
